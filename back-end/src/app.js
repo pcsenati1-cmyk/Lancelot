@@ -3,8 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const studentRoutes = require('./routes/students');
-const attendanceRoutes = require('./routes/attendance');
+const studentRoutes = require('./routes/estudiantes');
+const attendanceRoutes = require('./routes/asistencias');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,8 +26,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.use('/api/students', studentRoutes);
-app.use('/api/attendance', attendanceRoutes);
+app.use('/api/estudiantes', studentRoutes);
+app.use('/api/asistencias', attendanceRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
