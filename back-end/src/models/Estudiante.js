@@ -1,3 +1,5 @@
+const db = require('../config/database');
+
 class Estudiante {
   static async getAll() {
     const [rows] = await db.query('SELECT * FROM estudiantes ORDER BY created_at DESC');
